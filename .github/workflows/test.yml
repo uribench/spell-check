@@ -8,9 +8,6 @@ jobs:
     name: Spell check code and documents
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.5]
 
     steps:
     - name: Checkout code
@@ -19,12 +16,13 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version:  ${{ matrix.python-version }}
+        python-version:  3.5
 
     - name: Install dependencies
       run: |
         sudo apt-get install --assume-yes aspell aspell-en
-        python -m pip install --upgrade pip
-        pip install pyspelling
+        python -m pip install --upgrade pip setuptools
+        python -m pip install pyspelling
+
     - name: Run spell-check
-      run: pyspelling
+      run: python -m pyspelling
