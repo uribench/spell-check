@@ -13,9 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Bundle install
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+
+    - name: Install dependencies
       run: |
         sudo apt-get install --assume-yes aspell aspell-en
+        python -m pip install --upgrade pip
         pip install pyspelling
     - name: Run spell-check
       run: pyspelling
