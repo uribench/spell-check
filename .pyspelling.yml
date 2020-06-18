@@ -1,0 +1,26 @@
+matrix:
+
+- name: xml
+  sources:
+  - 'xml-files/*.xml'
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - 'custom-dictionary.txt'
+  pipeline:
+  - pyspelling.filters.xml:
+      comments: false
+      ignores:
+      - :matches(ignore_tag, [ignore_attribute])
+
+- name: markdown
+  sources:
+  - '**/*.md'
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - 'custom-dictionary.txt'
+  pipeline:
+  - pyspelling.filters.markdown:
