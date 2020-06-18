@@ -15,7 +15,7 @@ jobs:
 
     - name: Bundle install
       run: |
-        apt-get install --assume-yes aspell aspell-en
+        sudo apt-get install --assume-yes aspell aspell-en
         pip3 install pyspelling
     - name: Run spell-check
       run: pyspelling
