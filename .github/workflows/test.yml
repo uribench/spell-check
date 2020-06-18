@@ -1,0 +1,21 @@
+name: Test
+on:
+  pull_request:
+  push:
+
+jobs:
+  spell-check:
+    name: Spell check code and documents
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Bundle install
+      run: |
+        apt-get install --assume-yes aspell aspell-en
+        pip3 install pyspelling
+    - name: Run spell-check
+      run: pyspelling
