@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [2.7]
+        python-version: [3.5]
 
     steps:
     - name: Checkout code
