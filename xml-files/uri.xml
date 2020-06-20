@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>.craft</h:title>
+    <model>
+      <itext>
+        <translation default="true()" lang="default">
+          <value>IntelliSpace Radiology (ISR)</value>
+        </translation>
+      </itext>
+      <instance id="bv57t33">
+        <root>
+          <item>
+            <itextId>static_instance-bv57t33-0</itextId>
+            <name>no_policy</name>
+          </item>
+        </root>
+      </instance>      
+       <instance id="bg">
+        <root>
+          <item>
+            <itextId>static_instance-bg-0</itextId>
+            <description>Beauty</description>
+            <name>24</name>
+          </item>
+        </root>
+      </instance>
+   </model>
+  </h:head>
+  <h:body class="theme-grid pages no-text-transform">
+    <group appearance="field-list" ref="/data/group_gb8cd15">
+      <label>How should I use this form?</label>
+      <group ref="/data/group_gb8cd15/group_nm0mt05">
+        <label>User Input Tips</label>
+        <input ref="/data/group_gb8cd15/group_nm0mt05/Not_all_browsers_wor_sfully_tested_so_far">
+          <label>Not all browsers work smoothly with this tool. **Chrome v.78 and Firefox v.70** have been successfully tested so far</label>
+        </input>
+      </group>
+    </group>
+  </h:body>
+</h:html>

@@ -11,8 +11,8 @@ matrix:
   pipeline:
   - pyspelling.filters.xml:
       comments: false
-      ignores:
-      - :matches(ignore_tag, [ignore_attribute])
+      captures:
+      - :matches(value, name, description, label)
 
 - name: markdown
   sources:
