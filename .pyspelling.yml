@@ -1,18 +1,31 @@
 matrix:
 
-- name: xml
+# - name: xml
+#   sources:
+#   - 'xml-files/*.xml'
+#   aspell:
+#     lang: en
+#   dictionary:
+#     wordlists:
+#     - 'custom-dictionary.txt'
+#   pipeline:
+#   - pyspelling.filters.xml:
+#       comments: false
+#       captures:
+#       - :matches(value, name, description, label)
+
+- name: text
   sources:
-  - 'xml-files/*.xml'
+  - 'xml-files/extracted_text_from_xml.txt'
   aspell:
     lang: en
   dictionary:
     wordlists:
     - 'custom-dictionary.txt'
+  default_encoding: cp1252
   pipeline:
-  - pyspelling.filters.xml:
-      comments: false
-      captures:
-      - :matches(value, name, description, label)
+  - pyspelling.filters.text:
+      convert_encoding: utf-8
 
 - name: markdown
   sources:

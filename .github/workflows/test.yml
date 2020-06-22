@@ -31,4 +31,6 @@ jobs:
       run: python -c "import sys; print(sys.version)"
 
     - name: Run spell-check
-      run: python -m pyspelling
+      run: |
+        python src/extract_text_from_xml.py
+        python -m pyspelling
