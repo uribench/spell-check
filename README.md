@@ -1,3 +1,5 @@
+![](https://github.com/ueibench/spell-check/workflows/Spellchecking/badge.svg)
+
 # Spell Check
 
 This repository is using PySpelling to spell check various types of files.
