@@ -1,4 +1,4 @@
-![](https://github.com/ueibench/spell-check/workflows/Spellchecking/badge.svg)
+![](https://github.com/uribench/spell-check/workflows/Spellchecking/badge.svg)
 
 # Spell Check
 
