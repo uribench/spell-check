@@ -16,48 +16,49 @@ class KoboXmlHandler(xml.sax.ContentHandler):
         """Constructor
 
         Args:
-            nodes (List): List of target nodes names
+            nodes (List): List of source nodes names
             output (file object): Output file object for extracted text
         """
-        self.target_nodes = nodes
+        self.source_nodes = nodes
         self.output_file = output
-        self.is_target_node = False
+        self.is_source_node = False
         self.data = ''
 
     def startElement(self, name, attrs):
         """SAX 'startElement' event handler - called when an element starts"""
-        if name in self.target_nodes:
-            self.is_target_node = True
+        if name in self.source_nodes:
+            self.is_source_node = True
 
     def characters(self, data):
         """SAX 'characters' event handler - called when a chunk of characters within the element are read"""
-        if self.is_target_node:
+        if self.is_source_node:
             self.data += data
 
     def endElement(self, name):
         """SAX 'endElement' event handler - called when an element ends"""
-        if self.is_target_node:
+        if self.is_source_node:
             self.output_file.write(self.data + '\n')
-            self.is_target_node = False
+            self.is_source_node = False
             self.data = ''
 
 def main():
     """Program entry point"""
-    target_nodes = ["value", "label", "description", "name"]
-    tmp_file = open("./xml-files/extracted_text_from_xml.txt", "w")
+    source_xml_files = "./xml-files/*.xml"
+    source_nodes = ["value", "label", "description", "name"]
+    output_file = open("./xml-files/extracted_text_from_xml.txt", "w")
 
     parser = xml.sax.make_parser()
-    parser.setContentHandler(KoboXmlHandler(target_nodes, tmp_file))
+    parser.setContentHandler(KoboXmlHandler(source_nodes, output_file))
 
     # parse all relevant xml files
-    xml_files = glob.glob("./xml-files/*.xml")
+    xml_files = glob.glob(source_xml_files)
     for xml_file in xml_files:
-        tmp_file.write("\n---------------------------------------\n")
-        tmp_file.write("Text extracted from <" + xml_file + ">:\n")
-        tmp_file.write("---------------------------------------\n\n")
+        output_file.write("\n---------------------------------------\n")
+        output_file.write("Text extracted from <" + xml_file + ">:\n")
+        output_file.write("---------------------------------------\n\n")
         parser.parse(open(xml_file,"r"))
 
-    tmp_file.close()
+    output_file.close()
 
 if __name__ == '__main__':
     main()
