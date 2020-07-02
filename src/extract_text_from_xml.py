@@ -45,8 +45,9 @@ def main():
     """Program entry point"""
     source_xml_files = "./xml-files/*.xml"
     source_nodes = ["value", "label", "description", "name"]
-    output_file = open("./xml-files/extracted_text_from_xml.txt", "w")
+    output_file_name = "./xml-files/extracted_text_from_xml.txt"
 
+    output_file = open(output_file_name, "w")
     parser = xml.sax.make_parser()
     parser.setContentHandler(KoboXmlHandler(source_nodes, output_file))
 
