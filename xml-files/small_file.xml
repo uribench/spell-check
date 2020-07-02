@@ -8,11 +8,20 @@
           <value>Some text (ST)</value>
         </translation>
       </itext>
+      <itext>
+        <translation default="true()" lang="default">
+          <value>Somemisspelledtext_1 in value node</value>
+        </translation>
+      </itext>
       <instance id="abc123">
         <root>
           <item>
             <itextId>static_instance-abc123-0</itextId>
             <name>no_policy</name>
+          </item>
+          <item>
+            <itextId>static_instance-abc123-1</itextId>
+            <name>Somemisspelledtext_2 in name node</name>
           </item>
         </root>
       </instance>      
@@ -34,6 +43,15 @@
         <label>User Input Tips</label>
         <input ref="/data/group_gb8cd15/group_nm0mt05/Not_all_browsers_wor_sfully_tested_so_far">
           <label>Not all browsers work smoothly with this tool. **Chrome v.78 and Firefox v.70** have been successfully tested so far</label>
+        </input>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/data/group_gb8cd15">
+      <label>Somemisspelledtext_3 in label node</label>
+      <group ref="/data/group_gb8cd15/group_nm0mt05">
+        <label>Somemisspelledtext_4 in label node</label>
+        <input ref="/data/group_gb8cd15/group_nm0mt05/Not_all_browsers_wor_sfully_tested_so_far">
+          <label>Somemisspelledtext_5 in label node</label>
         </input>
       </group>
     </group>

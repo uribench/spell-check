@@ -12,7 +12,7 @@
             <value>Some Other Text (SOT)</value>
           </text>
           <text id="static_instance-abc123-45">
-            <value>Some Text (ST)</value>
+            <value>Somemisspelledtext_1 in value node</value>
           </text>
           <text id="static_instance-abc123-53">
             <value>Some Other Text (SOT)</value>
@@ -6248,7 +6248,7 @@
           </item>
           <item>
             <itextId>static_instance-abc126-1</itextId>
-            <name>best_effort</name>
+            <name>Somemisspelledtext_2 in name node</name>
           </item>
           <item>
             <itextId>static_instance-abc126-2</itextId>
@@ -7065,11 +7065,11 @@
       </group>
     </group>
     <group appearance="field-list" ref="/data/group_gb8cd15">
-      <label>How should I use this?</label>
+      <label>Somemisspelledtext_3 in label node</label>
       <group ref="/data/group_gb8cd15/group_nm0mt05">
         <label>User Input Tips</label>
         <input ref="/data/group_gb8cd15/group_nm0mt05/Not_all_browsers_wor_sfully_tested_so_far">
-          <label>Not all browsers work smoothly with this tool. **Chrome v.78 and Firefox v.70** have been successfully tested so far</label>
+          <label>Somemisspelledtext_4 in label node</label>
         </input>
         <input ref="/data/group_gb8cd15/group_nm0mt05/You_can_find_Save_a_r_to_open_your_draft">
           <label>You can find **Save as Draft** option at the end of the form (i.e. go to Submission on your top right navigation menu). Please, note that it will be stored as cookies in your browser so you should finish using the same computer and browser (check top left corner to open your draft)</label>
