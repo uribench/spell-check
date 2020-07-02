@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <h:head>
-    <h:title>.craft</h:title>
+    <h:title>small file</h:title>
     <model>
       <itext>
         <translation default="true()" lang="default">
-          <value>IntelliSpace Radiology (ISR)</value>
+          <value>Some text (ST)</value>
         </translation>
       </itext>
-      <instance id="bv57t33">
+      <instance id="abc123">
         <root>
           <item>
-            <itextId>static_instance-bv57t33-0</itextId>
+            <itextId>static_instance-abc123-0</itextId>
             <name>no_policy</name>
           </item>
         </root>
       </instance>      
-       <instance id="bg">
+       <instance id="xyz">
         <root>
           <item>
-            <itextId>static_instance-bg-0</itextId>
+            <itextId>static_instance-xyz-0</itextId>
             <description>Beauty</description>
             <name>24</name>
           </item>
