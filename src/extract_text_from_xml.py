@@ -1,25 +1,34 @@
 #!/usr/bin/env python3
 
+"""
+Extracts text from XML files for spell-checking by PySpelling.
+"""
+
 import xml.sax
 import glob
 
 class KoboXmlHandler(xml.sax.ContentHandler):
+    """
+    SAX Content Events Handler
+    """
+
     def __init__(self):
+        """Constructor"""
         self.target_nodes = ["value", "label", "description", "name"]
         self.is_target_node = False
 
-    # called when an element starts
     def startElement(self, name, attrs):
+        """SAX 'startElement' event handler - called when an element starts"""
         if name in self.target_nodes:
             self.is_target_node = True
 
-    # called when a character is read
     def characters( self, data):
+        """SAX 'characters' event handler - called when characters found within the element are read"""
         if self.is_target_node:
             tmp_file.write(data + '\n')
 
-    # called when an elements ends
     def endElement(self, tag):
+        """SAX 'endElement' event handler - called when an element ends"""
         self.is_target_node = False
 
 parser = xml.sax.make_parser()
