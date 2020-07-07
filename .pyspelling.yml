@@ -27,6 +27,7 @@ matrix:
 - name: python
   sources:
   - 'python-files/**/*.py'
+  - 'src/**/*.py'
   aspell:
     lang: en
   dictionary:
