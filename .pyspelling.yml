@@ -37,6 +37,19 @@ matrix:
   - pyspelling.filters.python:
       # the following options are 'true' by default: 'comments', 'docstrings', and 'decode_escapes'
 
+- name: javascript
+  sources:
+  - 'javascript-files/**/*.js'
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - 'custom-dictionary.txt'
+  pipeline:
+  - pyspelling.filters.javascript:
+      jsdocs: true
+      # the following options are 'true' by default: 'line_comments' and 'block_comments'
+
 # - name: xml
 #   sources:
 #   - 'xml-files/*.xml'
