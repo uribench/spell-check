@@ -1,19 +1,5 @@
 matrix:
 
-# - name: xml
-#   sources:
-#   - 'xml-files/*.xml'
-#   aspell:
-#     lang: en
-#   dictionary:
-#     wordlists:
-#     - 'custom-dictionary.txt'
-#   pipeline:
-#   - pyspelling.filters.xml:
-#       comments: false
-#       captures:
-#       - :matches(value, name, description, label)
-
 - name: text
   sources:
   - 'xml-files/extracted_text_from_xml.txt'
@@ -37,3 +23,29 @@ matrix:
     - 'custom-dictionary.txt'
   pipeline:
   - pyspelling.filters.markdown:
+
+- name: python
+  sources:
+  - 'python-files/**/*.py'
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - 'custom-dictionary.txt'
+  pipeline:
+  - pyspelling.filters.python:
+      # the following options are 'true' by default: 'comments', 'docstrings', and 'decode_escapes'
+
+# - name: xml
+#   sources:
+#   - 'xml-files/*.xml'
+#   aspell:
+#     lang: en
+#   dictionary:
+#     wordlists:
+#     - 'custom-dictionary.txt'
+#   pipeline:
+#   - pyspelling.filters.xml:
+#       comments: false
+#       captures:
+#       - :matches(value, name, description, label)
