@@ -18,9 +18,7 @@ matrix:
       - title
       - alt
       ignores:
-      - ':matches(code, pre)'
-      - 'code'
-      - 'pre'
+      - :matches(code, pre)
 
 - name: python
   sources:
