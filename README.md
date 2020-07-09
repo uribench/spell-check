@@ -103,7 +103,7 @@ pyspelling -v
 
 You can increase verbosity level by including more `v` chars (e.g., `-vv`, `-vvvv`). Currently, you can go up to four levels.
 
-In case PySpeling is used also with XML files, it is recommended to use the included pre-processing script prior to executing PySpelling. The following commands can be used locally for that:
+In case PySpelling is used also with XML files, it is recommended to use the included pre-processing script prior to executing PySpelling. The following commands can be used locally for that:
 
 ```bash
 $ ./src/extract_text_from_xml.py

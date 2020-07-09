@@ -81,3 +81,32 @@ Misspelled words:
 --------------------------------------------------------------------------------
 async
 --------------------------------------------------------------------------------
+
+Misspelled words:
+<markdown> README.md
+--------------------------------------------------------------------------------
+PySpelling
+VM
+YAML
+aspell
+ci
+facelessuser
+href
+http
+io
+li
+md
+ol
+pre
+py
+pyspelling
+subdirectories
+sudo
+txt
+ul
+vv
+vvvv
+wcmatch
+wordlists
+yml
+--------------------------------------------------------------------------------
