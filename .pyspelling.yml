@@ -23,8 +23,8 @@ matrix:
       # <code>  Defines a piece of computer code
       # <pre>   Defines pre-formatted text
       # <samp>  Defines sample output from a computer program
-      # <kbd> Defines keyboard input
-      # <var> Defines a variable
+      # <kbd>   Defines keyboard input
+      # <var>   Defines a variable
 
 - name: python
   sources:
