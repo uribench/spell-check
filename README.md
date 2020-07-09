@@ -77,7 +77,7 @@ Notes:
 - Each task requires, at the very least, a `name` and `sources` to search.
 - The double asterisk in the list of `sources` indicates a [`glob pattern`][10], which is usually used to indicate any number of sub-directories.
 - Each of the above tasks defines, in the list of `wordlists`, the custom dictionaries to be used. Here we use a common custom dictionary and we place it in the root of the repository. But separate custom dictionaries that are placed elsewhere is possible (e.g., each custom dictionary can be placed next to each type of files).
-- The `markdown` filter of PySpelling can be used in its simple form. However, when combined with the `html` in a PySpelling pipeline it provides more control on what parts of the Markdown file to ignore in the spell checking. This is based on the fact that the `markdown` filter of PySpelling converts the Markdown source file into HTML.
+- The `markdown` filter of PySpelling can be used in its simple form. However, in order to gain more control on what parts of the Markdown file to ignore in the spell checking, it can be combined with the `html` filter in a PySpelling `pipeline`, as in the included PySpelling configuration file. This is based on the fact that the `markdown` filter of PySpelling converts the Markdown source file into HTML. 
 
 ### Local Use of PySpelling
 
