@@ -15,6 +15,10 @@ img
 src
 svg
 uribench
+facelessuser
+YAML
+pre
+VM
 --------------------------------------------------------------------------------
 Misspelled words:
 <py-docstring> python-files/extract_text_from_xml.py(16): KoboXmlHandler.__init__()
@@ -80,13 +84,4 @@ Misspelled words:
 <js-line-comment> javascript-files/main_book_cipher_async.js (1)
 --------------------------------------------------------------------------------
 async
---------------------------------------------------------------------------------
-
-Misspelled words:
-<markdown> README.md
---------------------------------------------------------------------------------
-facelessuser
-YAML
-pre
-VM
 --------------------------------------------------------------------------------
