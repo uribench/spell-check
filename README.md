@@ -78,6 +78,7 @@ Notes:
 - The double asterisk in the list of `sources` indicates a [`glob pattern`][10], which is usually used to indicate any number of sub-directories.
 - Each of the above tasks defines, in the list of `wordlists`, the custom dictionaries to be used. Here we use a common custom dictionary and we place it in the root of the repository. But separate custom dictionaries that are placed elsewhere is possible (e.g., each custom dictionary can be placed next to each type of files).
 - The `markdown` filter of PySpelling can be used in its simple form. However, in order to gain more control on what parts of the Markdown file to ignore in the spell checking, it can be combined with the `html` filter in a PySpelling `pipeline`, as in the included PySpelling configuration file. This is based on the fact that the `markdown` filter of PySpelling converts the Markdown source file into HTML. 
+- The `xml` task has been commented because of the performance issue mention in the section below on [XML Spell Checking - Performance Issue Workaround](#xml-spell-checking-performance-issue-workaround) for additional details. Instead, the `text` task is used. 
 
 ### Local Use of PySpelling
 
@@ -175,7 +176,7 @@ Note: `.github/workflows/test.yml` is a YAML file so you have to pay extra atten
 
 ## Use a Docker Container or Not?
 
-The [`Docker_or_Not.md`] document discusses the preferred way of executing the GitHub Workflow steps that are included in the spell-check job. More specifically, it compares the main two alternative of directly executing them on GitHub-Hosted Runner VM or in a Docker Container.
+The [`Docker_or_Not.md`][16] document discusses the preferred way of executing the GitHub Workflow steps that are included in the spell-check job. More specifically, it compares the main two alternative of directly executing them on GitHub-Hosted Runner VM or in a Docker Container.
 
 ---
 
