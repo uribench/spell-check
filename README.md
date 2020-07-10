@@ -188,7 +188,7 @@ To run Pylint locally use the following command from the root of the repository:
 $ pylint ./src/*py ./tests/*.py
 ```
 
-The Python pre-processing script that extract text from XML files is tested using test scripts, helper, and fixture files under `./tests` folder. The tests were written for [Pytest][17]. Pytest is an open source framework for testing Python code. It is a no-boilerplate alternative to Python’s standard `unittest` module.
+The Python pre-processing script that extracts text from XML files is tested using test scripts, helper, and fixture files under `./tests` folder. The tests were written for [Pytest][17]. Pytest is an open source framework for testing Python code. It is a no-boilerplate alternative to Python’s standard `unittest` module.
 
 The tests are integrated in the GitHub CI pipeline.
 
