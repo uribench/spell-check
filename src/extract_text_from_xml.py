@@ -7,6 +7,7 @@ Extracts text from XML files for spell-checking by PySpelling.
 import xml.sax
 import glob
 import os
+import sys
 
 class ExtractXmlTextHandler(xml.sax.ContentHandler):
     """
@@ -39,29 +40,37 @@ class ExtractXmlTextHandler(xml.sax.ContentHandler):
         """SAX 'endElement' event handler - called when an element ends"""
         if self.is_source_node:
             self.output_file.write(self.data + '\n')
+            sys.stdout.write(self.data + '\n')  # for testing
             self.is_source_node = False
             self.data = ''
 
-def main():
-    """Program entry point"""
-
+def init_parameters():
+    """Set actual parameters values"""
     # default parameters values
     def_source_xml_files = "./xml-files/*.xml"
     def_source_nodes = ["value", "label", "description", "name"]
     def_output_file_name = "./xml-files/extracted_text_from_xml.txt"
 
     # set actual parameters values from environment variables (for tests) or use the defaults
-    source_xml_files = os.environ.get('source_xml_files')
+    source_xml_files = os.environ.get('SOURCE_XML_FILES')
     if source_xml_files == None:
         source_xml_files = def_source_xml_files
 
-    source_nodes = os.environ.get('source_nodes')
-    if source_nodes == None:
+    source_nodes_str = os.environ.get('SOURCE_NODES')
+    if source_nodes_str == None:
         source_nodes = def_source_nodes
+    else:
+        source_nodes = source_nodes_str.split(', ')
 
-    output_file_name = os.environ.get('output_file_name')
+    output_file_name = os.environ.get('OUTPUT_FILE_NAME')
     if output_file_name == None:
         output_file_name = def_output_file_name
+
+    return source_xml_files, source_nodes, output_file_name
+
+def main():
+    """Program entry point"""
+    source_xml_files, source_nodes, output_file_name = init_parameters()
 
     output_file = open(output_file_name, "w")
     parser = xml.sax.make_parser()

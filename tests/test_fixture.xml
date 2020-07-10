@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>test fixture file</h:title>
+    <model>
+      <itext>
+        <translation default="true()" lang="default">
+          <value>Some text in "value" node</value>
+        </translation>
+      </itext>
+      <itext>
+        <translation default="true()" lang="default">
+          <value>Some other text in "value" node</value>
+        </translation>
+      </itext>
+      <instance id="abc123">
+        <root>
+          <item>
+            <itextId>static_instance-abc123-0</itextId>
+            <name>Some text in "name" node</name>
+          </item>
+          <item>
+            <itextId>static_instance-abc123-1</itextId>
+            <name>Some other text in "name" node</name>
+          </item>
+        </root>
+      </instance>      
+       <instance id="xyz">
+        <root>
+          <item>
+            <itextId>static_instance-xyz-0</itextId>
+            <description>Beauty</description>
+            <name>Some other instance text in "name" node</name>
+          </item>
+        </root>
+      </instance>
+   </model>
+  </h:head>
+  <h:body class="theme-grid pages no-text-transform">
+    <group appearance="field-list" ref="/data/group_gb8cd15">
+      <label>Some text in "label" node</label>
+      <group ref="/data/group_gb8cd15/group_nm0mt05">
+        <label>Some other text in a nested "label" node</label>
+        <input ref="/data/group_gb8cd15/group_nm0mt05/Not_all_browsers_wor_sfully_tested_so_far">
+          <label>Some other text in a deeper nested "label" node</label>
+        </input>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/data/group_gb8cd15">
+      <label>Some other instance text in "label" node</label>
+      <group ref="/data/group_gb8cd15/group_nm0mt05">
+        <label>Some other instance text in a nested "label" node</label>
+        <input ref="/data/group_gb8cd15/group_nm0mt05/Not_all_browsers_wor_sfully_tested_so_far">
+          <label>Some other instance text in a deeper nested "label" node</label>
+        </input>
+      </group>
+    </group>
+  </h:body>
+</h:html>
