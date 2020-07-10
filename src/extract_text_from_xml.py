@@ -7,7 +7,7 @@ Extracts text from XML files for spell-checking by PySpelling.
 import xml.sax
 import glob
 
-class KoboXmlHandler(xml.sax.ContentHandler):
+class ExtractXmlTextHandler(xml.sax.ContentHandler):
     """
     SAX Content Events Handler
     """
@@ -49,7 +49,7 @@ def main():
 
     output_file = open(output_file_name, "w")
     parser = xml.sax.make_parser()
-    parser.setContentHandler(KoboXmlHandler(source_nodes, output_file))
+    parser.setContentHandler(ExtractXmlTextHandler(source_nodes, output_file))
 
     # parse all relevant xml files
     xml_files = glob.glob(source_xml_files)
