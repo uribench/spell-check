@@ -20,9 +20,6 @@ YAML
 pre
 VM
 
-
-
-
 --------------------------------------------------------------------------------
 Misspelled words:
 <markdown> Docker or Not.md
@@ -54,6 +51,16 @@ aspell
 JSON
 CLI
 parsers
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<markdown> LICENSE.md
+--------------------------------------------------------------------------------
+Unlicense
+MERCHANTABILITY
+NONINFRINGEMENT
+http
+unlicense
 --------------------------------------------------------------------------------
 
 Misspelled words:
