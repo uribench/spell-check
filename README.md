@@ -46,7 +46,7 @@ $ pyspelling >> custom-dictionary.txt
 
 ## Why PySpelling
 
-There are several tools available for spell checking of various types of files. [PySpelling][1] by facelessuser was selected. It is a Python wrapper around [Gnu Aspell][5] that simplifies automation. See [this][6] for details on the selection criteria.
+There are several tools available for spell checking of various types of files. [PySpelling][1] by facelessuser was selected. It is a Python wrapper around [Gnu Aspell][5] that simplifies automation. See the [`Spell Checkers Comparison`][6] document for details on the selection criteria.
 
 ## PySpelling Installation
 
@@ -147,7 +147,7 @@ To handle this limitation a work around has been implemented in the form of Pyth
 
 Note that **this approach takes less than 1 sec compared to about 30-50 min** with the XML filter of PySpelling. 
 
-For more details on this work around see the [`XML_Spell_Checking_Workaround`][11] document.
+For more details on this work around see the [`XML Spell Checking Workaround`][11] document.
 
 In order to locally execute the pre-processing script followed by PySpelling, use the following commands:
 
@@ -176,7 +176,7 @@ Note: `.github/workflows/test.yml` is a YAML file so you have to pay extra atten
 
 ## Use a Docker Container or Not?
 
-The [`Docker_or_Not.md`][16] document discusses the preferred way of executing the GitHub Workflow steps that are included in the spell-check job. More specifically, it compares the main two alternative of directly executing them on GitHub-Hosted Runner VM or in a Docker Container.
+The [`Docker or Not`][16] document discusses the preferred way of executing the GitHub Workflow steps that are included in the spell-check job. More specifically, it compares the main two alternative of directly executing them on GitHub-Hosted Runner VM or in a Docker Container.
 
 ---
 
@@ -185,14 +185,14 @@ The [`Docker_or_Not.md`][16] document discusses the preferred way of executing t
 [3]: https://facelessuser.github.io/pyspelling/configuration/#spell-checker-options
 [4]: https://facelessuser.github.io/pyspelling/pipeline/#filter
 [5]: http://aspell.net/
-[6]: ./docs/Spell_Checkers_Comparison.md
+[6]: ./docs/Spell%20Checkers%20Comparison.md
 [7]: https://facelessuser.github.io/pyspelling/#installing
 [8]: https://facelessuser.github.io/pyspelling/#usage-in-windows
 [9]: ./.pyspelling.yml
 [10]: https://facelessuser.github.io/wcmatch/glob/
-[11]: ./docs/XML_Spell_Checking_Workaround.md
+[11]: ./docs/XML%20Spell%20Checking%20Workaround.md
 [12]: https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions
 [13]: https://help.github.com/en/actions/getting-started-with-github-actions/core-concepts-for-github-actions
 [14]: https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow
 [15]: ./.github/workflows/test.yml
-[16]: ./docs/Docker_or_Not.md
+[16]: ./docs/Docker%20or%20Not.md
