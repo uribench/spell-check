@@ -8,14 +8,8 @@ def test_output_of_main():
     output = Popen([program], stdout=PIPE).communicate()[0]
     assert b'Some text in "value" node' in output
     assert b'Some other text in "value" node' in output
-    assert b'Some text in "name" node' in output
-    assert b'Some other text in "name" node' in output
+    assert b'Some text in "description" node' in output
     assert b'Some other instance text in "name" node' in output
-    assert b'Some text in "label" node' in output
-    assert b'Some other text in a nested "label" node' in output
-    assert b'Some other text in a deeper nested "label" node' in output
-    assert b'Some other instance text in "label" node' in output
-    assert b'Some other instance text in a nested "label" node' in output
     assert b'Some other instance text in a deeper nested "label" node' in output
 
 set_test_env()

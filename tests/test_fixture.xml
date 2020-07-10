@@ -29,7 +29,7 @@
         <root>
           <item>
             <itextId>static_instance-xyz-0</itextId>
-            <description>Beauty</description>
+            <description>Some text in "description" node</description>
             <name>Some other instance text in "name" node</name>
           </item>
         </root>
