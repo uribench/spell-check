@@ -23,6 +23,7 @@ The next sections cover the following subjects in more details:
 - [XML Spell Checking - Performance Issue Workaround](#xml-spell-checking-performance-issue-workaround)
 - [CI Pipeline Configuration](#ci-pipeline-configuration)
 - [Use a Docker Container or Not?](#use-a-docker-container-or-not)
+- [Linting and Testing the Code](#linting-and-testing-the-code)
 
 ## Typical Usage Workflow
 
