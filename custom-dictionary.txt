@@ -1,0 +1,142 @@
+Misspelled words:
+<text> xml-files/extracted_text_from_xml.txt
+--------------------------------------------------------------------------------
+Somemisspelledtext
+xml
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<markdown> README.md
+--------------------------------------------------------------------------------
+PySpelling
+github
+https
+img
+src
+svg
+uribench
+facelessuser
+YAML
+pre
+VM
+Pylint
+Pytest
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<markdown> Docker or Not.md
+--------------------------------------------------------------------------------
+macOS
+rojopolis
+sbates
+centric
+repo
+expressibility
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<markdown> Spell Checkers Comparison.md
+--------------------------------------------------------------------------------
+docstring
+docstrings
+GPL
+LGPL
+MPL
+maintainership
+Drc
+Pyenchant
+AbiWord
+rfk
+UTF
+rc
+aspell
+JSON
+CLI
+parsers
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<markdown> LICENSE.md
+--------------------------------------------------------------------------------
+Unlicense
+MERCHANTABILITY
+NONINFRINGEMENT
+http
+unlicense
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-docstring> python-files/extract_text_from_xml.py(16): KoboXmlHandler.__init__()
+--------------------------------------------------------------------------------
+Args
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-docstring> python-files/extract_text_from_xml.py(28): KoboXmlHandler.startElement()
+--------------------------------------------------------------------------------
+startElement
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-docstring> python-files/extract_text_from_xml.py(38): KoboXmlHandler.endElement()
+--------------------------------------------------------------------------------
+endElement
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-comment> python-files/extract_text_from_xml.py(1)
+--------------------------------------------------------------------------------
+env
+usr
+environ
+stdout
+sys
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-docstring> src/__init__.py(1):
+--------------------------------------------------------------------------------
+init
+py
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-comment> python-files/main_caesar_cipher.py(1)
+--------------------------------------------------------------------------------
+env
+usr
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-comment> python-files/main_caesar_cipher.py(14): main()
+--------------------------------------------------------------------------------
+Hqjfs
+Htij
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-comment> python-files/main_deranged_alphabet_cipher.py(1)
+--------------------------------------------------------------------------------
+env
+usr
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<py-comment> python-files/main_deranged_alphabet_cipher.py(14): main()
+--------------------------------------------------------------------------------
+vTnnTl
+zQmnTl
+zilTpTl
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<js-line-comment> javascript-files/decoder_book_cipher_async.js (1)
+--------------------------------------------------------------------------------
+Async
+--------------------------------------------------------------------------------
+
+Misspelled words:
+<js-line-comment> javascript-files/main_book_cipher_async.js (1)
+--------------------------------------------------------------------------------
+async
+--------------------------------------------------------------------------------
