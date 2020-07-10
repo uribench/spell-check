@@ -178,6 +178,26 @@ Note: `.github/workflows/test.yml` is a YAML file so you have to pay extra atten
 
 The [`Docker or Not`][16] document discusses the preferred way of executing the GitHub Workflow steps that are included in the spell-check job. More specifically, it compares the main two alternative of directly executing them on GitHub-Hosted Runner VM or in a Docker Container.
 
+## Linting and Testing the Code
+
+Pylint is used to lint all relevant Python scripts. Pylint is integrated in the GitHub CI pipeline. 
+
+To run Pylint locally use the following command from the root of the repository:
+
+```bash
+$ pylint ./src/*py ./tests/*.py
+```
+
+The Python pre-processing script that extract text from XML files is tested using test scripts, helper, and fixture files under `./tests` folder. The tests were written for [Pytest][17]. Pytest is an open source framework for testing Python code. It is a no-boilerplate alternative to Python’s standard `unittest` module.
+
+The tests are integrated in the GitHub CI pipeline.
+
+To run the tests locally use the following command from the root of the repository:
+
+```bash
+$ pytest
+```
+
 ---
 
 [1]: https://github.com/facelessuser/pyspelling
@@ -196,3 +216,4 @@ The [`Docker or Not`][16] document discusses the preferred way of executing the 
 [14]: https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow
 [15]: ./.github/workflows/test.yml
 [16]: ./docs/Docker%20or%20Not.md
+[17]: https://pytest.org/
