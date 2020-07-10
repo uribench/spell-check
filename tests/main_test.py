@@ -1,9 +1,9 @@
 """Functional test of the 'extract_text_from_xml.py' script"""
-import pytest
 from subprocess import Popen, PIPE
 from .test_helper import set_test_env
 
 def test_output_of_main():
+    """Sample tests of the extracted text by the 'extract_text_from_xml.py' script"""
     program = 'src/extract_text_from_xml.py'
     output = Popen([program], stdout=PIPE).communicate()[0]
     assert b'Some text in "value" node' in output

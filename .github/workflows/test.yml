@@ -30,6 +30,9 @@ jobs:
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
 
+    - name: Pylint relevant Python scripts
+      run: python -m pylint ./src/*py ./tests/*.py
+
     - name: Test text extraction script
       run: python -m pytest
 

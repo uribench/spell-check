@@ -22,27 +22,28 @@ class ExtractXmlTextHandler(xml.sax.ContentHandler):
             nodes (List): List of source nodes names
             output (file object): Output file object for extracted text
         """
+        super(ExtractXmlTextHandler, self).__init__()
         self.source_nodes = nodes
         self.output = output
         self.is_source_node = False
-        self.data = ''
+        self.content = ''
 
     def startElement(self, name, attrs):
         """SAX 'startElement' event handler - called when an element starts"""
         if name in self.source_nodes:
             self.is_source_node = True
 
-    def characters(self, data):
-        """SAX 'characters' event handler - called when a chunk of characters within the element are read"""
+    def characters(self, content):
+        """SAX 'characters' event handler - called when a chunk of characters are read"""
         if self.is_source_node:
-            self.data += data
+            self.content += content
 
     def endElement(self, name):
         """SAX 'endElement' event handler - called when an element ends"""
         if self.is_source_node:
-            self.output.write(self.data + '\n')
+            self.output.write(self.content + '\n')
             self.is_source_node = False
-            self.data = ''
+            self.content = ''
 
 def init_parameters():
     """Set actual parameters values"""
@@ -71,7 +72,7 @@ def init_parameters():
     return source_xml_files, source_nodes, output_file_name
 
 @contextlib.contextmanager
-def file_writer(file_name = None):
+def file_writer(file_name=None):
     """Create writer object based on file_name"""
     if file_name is not None:
         writer = open(file_name, "w")
@@ -80,7 +81,7 @@ def file_writer(file_name = None):
 
     yield writer
 
-    if file_name is not None: 
+    if file_name is not None:
         writer.close()
 
 def main():
@@ -89,7 +90,8 @@ def main():
 
     with file_writer(output_file_name) as output:
         parser = xml.sax.make_parser()
-        parser.setContentHandler(ExtractXmlTextHandler(source_nodes, output))
+        handler = ExtractXmlTextHandler(source_nodes, output)
+        parser.setContentHandler(handler)
 
         # parse all relevant xml files
         xml_files = glob.glob(source_xml_files)
@@ -97,7 +99,7 @@ def main():
             output.write("\n---------------------------------------\n")
             output.write("Text extracted from <" + xml_file + ">:\n")
             output.write("---------------------------------------\n\n")
-            parser.parse(open(xml_file,"r"))
+            parser.parse(open(xml_file, "r"))
 
 if __name__ == '__main__':
     main()
