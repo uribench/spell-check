@@ -6,6 +6,7 @@ Extracts text from XML files for spell-checking by PySpelling.
 
 import xml.sax
 import glob
+import os
 
 class ExtractXmlTextHandler(xml.sax.ContentHandler):
     """
@@ -43,9 +44,24 @@ class ExtractXmlTextHandler(xml.sax.ContentHandler):
 
 def main():
     """Program entry point"""
-    source_xml_files = "./xml-files/*.xml"
-    source_nodes = ["value", "label", "description", "name"]
-    output_file_name = "./xml-files/extracted_text_from_xml.txt"
+
+    # default parameters values
+    def_source_xml_files = "./xml-files/*.xml"
+    def_source_nodes = ["value", "label", "description", "name"]
+    def_output_file_name = "./xml-files/extracted_text_from_xml.txt"
+
+    # set actual parameters values from environment variables (for tests) or use the defaults
+    source_xml_files = os.environ.get('source_xml_files')
+    if source_xml_files == None:
+        source_xml_files = def_source_xml_files
+
+    source_nodes = os.environ.get('source_nodes')
+    if source_nodes == None:
+        source_nodes = def_source_nodes
+
+    output_file_name = os.environ.get('output_file_name')
+    if output_file_name == None:
+        output_file_name = def_output_file_name
 
     output_file = open(output_file_name, "w")
     parser = xml.sax.make_parser()
