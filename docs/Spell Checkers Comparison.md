@@ -108,7 +108,7 @@ It supports custom dictionaries. They are making use of a configuration file cal
 global dictionary at the start, file overrides afterwards.
 
 It has no filters for spell checking certain parts other types files, such as line comments, block 
-comments, or docstings in code files (e.g., Python, JavaScript).
+comments, or docstrings in code files (e.g., Python, JavaScript).
 
 It has a CLI support with two modes: Interactive and Report.
 
