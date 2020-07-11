@@ -38,4 +38,5 @@ jobs:
 
     - name: Run spell-check
       run: |
+        ./src/extract_text_from_xml.py
         python -m pyspelling

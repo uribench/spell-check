@@ -52,29 +52,29 @@ matrix:
       jsdocs: true
       # the following options are 'true' by default: 'line_comments' and 'block_comments'
 
-- name: xml
-  sources:
-  - 'xml-files/*.xml'
-  aspell:
-    lang: en
-  dictionary:
-    wordlists:
-    - 'custom-dictionary.txt'
-  pipeline:
-  - pyspelling.filters.xml:
-      comments: false
-      captures:
-      - :matches(value, name, description, label)
-
-# - name: text
+# - name: xml
 #   sources:
-#   - 'xml-files/extracted_text_from_xml.txt'
+#   - 'xml-files/*.xml'
 #   aspell:
 #     lang: en
 #   dictionary:
 #     wordlists:
 #     - 'custom-dictionary.txt'
-#   default_encoding: cp1252
 #   pipeline:
-#   - pyspelling.filters.text:
-#       convert_encoding: utf-8
+#   - pyspelling.filters.xml:
+#       comments: false
+#       captures:
+#       - :matches(value, name, description, label)
+
+- name: text
+  sources:
+  - 'xml-files/extracted_text_from_xml.txt'
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - 'custom-dictionary.txt'
+  default_encoding: cp1252
+  pipeline:
+  - pyspelling.filters.text:
+      convert_encoding: utf-8

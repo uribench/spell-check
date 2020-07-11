@@ -77,9 +77,9 @@ Notes:
 - All of the tasks are contained under the keyword `matrix` and are organized in a YAML list. 
 - Each task requires, at the very least, a `name` and `sources` to search.
 - The double asterisk in the list of `sources` indicates a [`glob pattern`][10], which is usually used to indicate any number of sub-directories.
-- Each of the above tasks defines, in the list of `wordlists`, the custom dictionaries to be used. Here we use a common custom dictionary and we place it in the root of the repository. But separate custom dictionaries that are placed elsewhere is possible (e.g., each custom dictionary can be placed next to each type of files).
+- Each of the above tasks defines, in the list of `wordlists`, the custom dictionaries to be used. Here we use a common custom dictionary and we place it in the root of the repository. However, separate custom dictionaries that are placed elsewhere is possible (e.g., each custom dictionary can be placed next to each type of files).
 - The `markdown` filter of PySpelling can be used in its simple form. However, in order to gain more control on what parts of the Markdown file to ignore in the spell checking, it can be combined with the `html` filter in a PySpelling `pipeline`, as in the included PySpelling configuration file. This is based on the fact that the `markdown` filter of PySpelling converts the Markdown source file into HTML. 
-- The `xml` task has been commented because of the performance issue mention in the section below on [XML Spell Checking - Performance Issue Workaround](#xml-spell-checking-performance-issue-workaround) for additional details. Instead, the `text` task is used. 
+- The `xml` task has been commented because of the performance issue mention in the section below on [XML Spell Checking - Performance Issue Workaround](#xml-spell-checking-performance-issue-workaround). Instead, the `text` task is used. 
 
 ### Local Use of PySpelling
 
@@ -119,7 +119,7 @@ See the section below on [XML Spell Checking - Performance Issue Workaround](#xm
 
 **Do not forget** to populate the custom dictionaries appropriately. 
 
-To populate the custom dictionary with all the exceptions found by all the tasks in the PySpelling configuration file use (i.e., as mentioned earlier, here we use one common custom dictionary):
+To populate the custom dictionary with all the exceptions found by all the tasks in the PySpelling configuration file use the following command (i.e., as mentioned earlier, here we use one common custom dictionary):
 
 ```bash
 $ pyspelling >> custom-dictionary.txt
@@ -142,13 +142,13 @@ $ pyspelling >> custom-dictionary.txt
 
 ## XML Spell Checking - Performance Issue Workaround
 
-Due to an issue with PySpelling or the underlying GNU Aspell, spell checking of large XML files takes very long time. For instance, spell checking included XML example files (about 10K lines in total) takes about 30-50 min.
+Due to an issue with PySpelling or the underlying GNU Aspell, spell checking of large XML files takes very long time. For instance, spell checking of the included XML example files (about 10K lines in total) takes about 11 min on a GitHub-Hosted Runner.
 
-To handle this limitation a work around has been implemented in the form of Python script for pre-processing the XML files to extract plain text from relevant XML nodes, and then using PySpelling to spell check only the plain text.
+To handle this limitation, a work around has been implemented using a Python script for pre-processing the XML files. It extracts plain text from relevant XML nodes, and then PySpelling is used to spell check only the extracted plain text.
 
-Note that **this approach takes less than 1 sec compared to about 30-50 min** with the XML filter of PySpelling. 
+Note that **this approach takes about 1-2 sec spell checking the included XML files, compared to about 11 min** with the PySpelling XML filter. 
 
-For more details on this work around see the [`XML Spell Checking Workaround`][11] document.
+For more details on this workaround see the [`XML Spell Checking Workaround`][11] document.
 
 In order to locally execute the pre-processing script followed by PySpelling, use the following commands:
 
@@ -169,11 +169,11 @@ For a quick introduction to GitHub workflow and actions see the following docume
 
 The spell check is integrated in the GitHub CI pipeline automation, which includes setting of the GitHub-Hosted Runner virtual machine and all the required dependencies. After that, the PySpelling is executed.
 
-The [`.github/workflows/test.yml`][15] file includes the workflow configuration for all the tests of this GitHub repository. In this demonstration repository, it refers only to the spell checking test. 
+The [`.github/workflows/test.yml`][15] file includes the workflow configuration for all the tests of this GitHub repository. In this demonstration repository, it refers to [Linting and Testing the Code](#linting-and-testing-the-code), as well as, the spell checking using the pre-processor followed by PySpelling. All is done in a single job (i.e., also single VM) with multiple steps, each dedicated to a separate concern. 
 
 On its simplest mode, on any push to your repository, GitHub will look for the existing workflow files and start the specified jobs on Runners according to the contents of the file, for that commit.
 
-Note: `.github/workflows/test.yml` is a YAML file so you have to pay extra attention to indentation. Always use spaces, **not tabs**.
+Note: `.github/workflows/test.yml` is a YAML file so you have to pay extra attention to indentation. Always use spaces, **not tabs**. Also, line comments are indicated by the # (hashtag symbol) at the **start of the line**.
 
 ## Use a Docker Container or Not?
 
@@ -181,19 +181,19 @@ The [`Docker or Not`][16] document discusses the preferred way of executing the 
 
 ## Linting and Testing the Code
 
-Pylint is used to lint all relevant Python scripts. Pylint is integrated in the GitHub CI pipeline. 
+Pylint is used to lint all the relevant Python scripts. Pylint is integrated in the GitHub CI pipeline. 
 
-To run Pylint locally use the following command from the root of the repository:
+To run Pylint locally, use the following command from the root of the repository:
 
 ```bash
 $ pylint ./src/*py ./tests/*.py
 ```
 
-The Python pre-processing script that extracts text from XML files is tested using test scripts, helper, and fixture files under `./tests` folder. The tests were written for [Pytest][17]. Pytest is an open source framework for testing Python code. It is a no-boilerplate alternative to Python’s standard `unittest` module.
+The Python pre-processing script that extracts text from the specified XML files is tested using test scripts, helper, and fixture files under `./tests` folder. The tests were written for [Pytest][17]. Pytest is an open source framework for testing Python code. It is a no-boilerplate alternative to Python’s standard `unittest` module.
 
 The tests are integrated in the GitHub CI pipeline.
 
-To run the tests locally use the following command from the root of the repository:
+To run the tests locally, use the following command from the root of the repository:
 
 ```bash
 $ pytest
