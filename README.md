@@ -181,7 +181,13 @@ The [`Docker or Not`][16] document discusses the preferred way of executing the 
 
 ## Linting and Testing the Code
 
-Pylint is used to lint all the relevant Python scripts. Pylint is integrated in the GitHub CI pipeline. 
+Pylint is used to lint all the relevant Python scripts. Pylint is integrated in the GitHub CI pipeline.
+
+To install Pylint locally, run the following command:
+
+```bash
+$ pip install pylint
+```
 
 To run Pylint locally, use the following command from the root of the repository:
 
@@ -192,6 +198,12 @@ $ pylint ./src/*py ./tests/*.py
 The Python pre-processing script that extracts text from the specified XML files is tested using test scripts, helper, and fixture files under `./tests` folder. The tests were written for [Pytest][17]. Pytest is an open source framework for testing Python code. It is a no-boilerplate alternative to Python’s standard `unittest` module.
 
 The tests are integrated in the GitHub CI pipeline.
+
+To install Pytest locally, run the following command:
+
+```bash
+$ pip install pytest
+```
 
 To run the tests locally, use the following command from the root of the repository:
 
