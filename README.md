@@ -177,7 +177,7 @@ Note: `.github/workflows/test.yml` is a YAML file so you have to pay extra atten
 
 ## Use a Docker Container or Not?
 
-The [`Docker or Not`][16] document discusses the preferred way of executing the GitHub Workflow steps that are included in the spell-check job. More specifically, it compares the main two alternative of directly executing them on GitHub-Hosted Runner VM or in a Docker Container.
+The [`Docker or Not`][16] document discusses the preferred way of executing the GitHub Workflow steps that are included in the spell-check job. More specifically, it compares the main two alternatives of directly executing them on GitHub-Hosted Runner VM or in a Docker Container.
 
 ## Linting and Testing the Code
 
